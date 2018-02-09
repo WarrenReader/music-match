@@ -1,29 +1,14 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import './styles/header.css';
 
 export default class Header extends Component {
-  constructor() {
-    super();
-    this.state = {
-      user: {}
-    }
+  constructor(props) {
+    super(props);
+
   }
 
-
-
-componentDidMount(){
-  axios.get('/api/1').then(res => 
-    this.setState({
-      user: res.data
-    })
-  );
-}
-
-
-
 render() {
-  let {firstName} = this.state.user;
+  let {firstName} = this.props.user;
 
   return (
     <header id="header">
