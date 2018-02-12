@@ -1,0 +1,64 @@
+.user-profile {
+  width: 90%;
+  margin: 25px auto;
+}
+
+.small-container {
+  padding-left: 10px;
+}
+
+.lighten {
+  padding-right: 10px;
+  font-size: 0.8em;
+}
+
+.edit {
+  font-size: 0.6em;
+  padding-left: 5px;
+  color: rebeccapurple;
+  text-decoration: underline;
+}
+
+.user-profile h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 40px 0 15px 0;
+  background: -webkit-linear-gradient(-125deg, #8468F5 0%, #EC74E7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.user-profile p {
+  margin-bottom: 3px;
+}
+
+.inputField {
+  width: 80%;
+  font-size: 1em;
+  font-family: sans-serif;
+}
+
+.inputBox {
+  width: 85%;
+  height: 75px;
+  font-size: 1em;
+  font-family: sans-serif;
+}
+
+.buttons {
+  width: 200px;
+  margin: auto;
+}
+
+@media (min-width: 750px) {
+  .user-profile{
+    width: 500px;
+  }
+
+}
+
+@media (min-width: 950px) {
+  .user-profile{
+    max-width: 700px;
+  }
+}

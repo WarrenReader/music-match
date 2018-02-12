@@ -1,0 +1,44 @@
+/*--- Artist Profile Container ---*/
+.artist-profile {
+width: 90%;
+margin: auto;
+}
+
+
+
+/*--- Search Field ---*/
+#searchField {
+  width: 75%;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  font-size: 1.5em;
+}
+
+.searchFieldButton {
+  width: 23%;
+  font-size: 1.5em;
+  padding: 1px;
+  margin-left: 5px;
+  background: -webkit-linear-gradient(-125deg, #8468F5 0%, rgb(0, 255, 255) 100%);
+  border-radius: 10%;
+  border: none;
+  color: White;
+}
+
+
+/*--- Artist Profile ---*/
+
+.artist-profile h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 40px 0 15px 0;
+  background: -webkit-linear-gradient(-125deg, #8468F5 0%, #EC74E7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+img {
+  display: block;
+  margin: 15px auto;
+}
