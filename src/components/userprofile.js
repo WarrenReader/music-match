@@ -16,7 +16,8 @@ export default class UserProfile extends Component {
   }
 
   this.updateName = this.updateName.bind(this);
-  this.update = this.update.bind(this);
+  this.saveButton = this.saveButton.bind(this);
+  this.editButton = this.editButton.bind(this);
 
 }
 
@@ -66,53 +67,57 @@ export default class UserProfile extends Component {
         name: this.state.user.name,
         email: this.state.user.email,
         id: this.state.user.id,
-        favoriteArtists: newFavoriteArtists,
-        favoriteGenres: this.state.user.favoriteGenres
       }
     })
   }
 
 
-  update(){
-    console.log("clicked");
+  saveButton(){
     axios.put('/api/update', this.state.user).then((res) => console.log(res));
+    let inputFields = document.getElementsByClassName("inputField");
+    inputFields[0].setAttribute("disabled", "true");
+    inputFields[1].setAttribute("disabled", "true");
+  }
+
+  editButton() {
+    let inputFields = document.getElementsByClassName("inputField");
+    inputFields[0].removeAttribute("disabled");
+    inputFields[1].removeAttribute("disabled");
   }
 
   render() {
 
-    let {name, email, favoriteArtists, favoriteGenres} = this.state.user;
-    favoriteArtists = favoriteArtists.join(', ');
+    let {name, email} = this.state.user;
 
     return (
-      <div className="user-profile">
-        <h2>User Profile</h2>
 
-        <h3>User Details</h3>
+      <div className="user-profile-dropdown">
+      <input id="collapsible2" className="toggle" type="checkbox" />
+      <label htmlFor="collapsible2" className="lbl-toggle">User Profile</label>
+      <div className="collapsible-content">
+        <div className="content-inner">
+        <div className="user-profile">
           <div className="small-container">
             <p>
               <span className="lighten">Name:</span>
-              <input className="inputField" value={name} onChange={(e) => this.updateName(e)} />
+              <input className="inputField" value={name} onChange={(e) => this.updateName(e)} disabled/>
             </p>
             <p>
               <span className="lighten">Email:</span>
-              <input className="inputField" value={email} onChange={(e) => this.updateEmail(e)} />
+              <input className="inputField" value={email} onChange={(e) => this.updateEmail(e)}  disabled/>
             </p>
           </div>
         
-        <h3>Favorite Artists</h3>
-          <div className="small-container">
-            <p><textarea className="inputBox" value={favoriteArtists} onChange={(e) => this.updateFavoriteArtists(e)}></textarea></p>
-          </div>
-
-        <h3>Favorite Genres</h3>
-          <div className="small-container">
-            <p>{favoriteGenres.join(', ')}</p>
-          </div>
-        
         <div className="buttons">
-          <button>Edit Profile</button>
-          <button onClick={this.update}>Save</button>
+          <button onClick={this.editButton}>Edit Profile</button>
+          <button onClick={this.saveButton}>Save</button>
         </div>
+        
+        </div>
+      </div>
+    </div>
+
+      
         
       </div>
     )

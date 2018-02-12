@@ -2,11 +2,9 @@ let users = [{
   name: "Warren Reader",
   email: "WarrenDReader@gmail.com",
   id: 1,
-  favoriteArtists: ['Blink-182', 'Carbon Based Lifeforms', 'BT', 'Eric Prydz', 'Chelsea Grin'],
-  favoriteGenres: ['Punk', 'Trance', 'Death Metal', 'Metal Core', 'Drone'],
 }];
 
-var id = 2;
+let id = 2;
 
 module.exports = {
 
@@ -22,6 +20,28 @@ module.exports = {
     let index = users.findIndex(user => user.id === requestedId);
     users[index] = req.body;
     res.status(200).send(users[index]);
+  },
+
+  createUser: (req, res) => {
+    let newUser = req.body;
+    newUser.id = id;
+    users.push(newUser);
+    res.status(200).send(users);
+    id++;
+  },
+
+  deleteUser: (req, res) => {
+    let deleteUser = req.body;
+    for (var i = 0; i < users.length; i++) {
+      let obj = users[i];
+      if (obj.id === parseInt(req.params.id)) {
+        if (obj.name === req.params.name) {
+          users.splice(i, 1);
+        }
+      }
+    }
+
+    res.status(200).send(users);
   }
 
 }

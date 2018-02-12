@@ -1,0 +1,11 @@
+.create-user-dropdown {
+  width: 90%;
+  margin: 25px auto;
+}
+
+.create-user-button {
+  font-size: 1em;
+  margin: auto;
+  display: block;
+  color: green;
+}

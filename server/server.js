@@ -8,6 +8,8 @@ app.use(bodyParser.json());
 
 app.get('/api/:id', controller.getUser);
 app.put('/api/update', controller.updateUser);
+app.post('/api/create-user', controller.createUser);
+app.delete('/api/delete-user/:id/:name', controller.deleteUser);
 
 
 

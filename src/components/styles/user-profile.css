@@ -32,10 +32,22 @@
   margin-bottom: 3px;
 }
 
-.inputField {
-  width: 80%;
+.inputField[disabled] {
+  width: 100%;
   font-size: 1em;
   font-family: sans-serif;
+  background: #E8E8E8;
+  border: none;
+  margin: 5px;
+}
+
+.inputField {
+  width: 100%;
+  font-size: 1em;
+  font-family: sans-serif;
+  background: #fff;
+  border: none;
+  margin: 5px;
 }
 
 .inputBox {
@@ -50,9 +62,13 @@
   margin: auto;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 700px) {
   .user-profile{
     width: 500px;
+  }
+
+  .inputField {
+    width: 60%;
   }
 
 }
@@ -61,4 +77,15 @@
   .user-profile{
     max-width: 700px;
   }
+}
+
+.user-profile-dropdown {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.buttons button {
+  font-size: 1em;
+  margin: 15px 0 0 10px;
 }
