@@ -1,0 +1,21 @@
+.itunesResult {
+  float: left;
+  width: 50%;
+  height: 225px;
+  text-align: center;
+}
+
+.itunesResult p {
+  margin-bottom: 2px;
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.moreByArtist {
+  padding-top: 40px;
+}

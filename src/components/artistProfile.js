@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import './styles/artistprofile.css'
+import './styles/artistprofile.css';
+import Itunes from './itunes.js';
 
 export default class ArtistProfile extends Component {
   constructor(){
@@ -20,12 +21,13 @@ export default class ArtistProfile extends Component {
     this.conductSearch = this.conductSearch.bind(this);
   }
 
+
   searchFieldChange(value) {
     this.setState({
       search: value
     })
-    console.log(this.state.search);
   }
+
 
   conductSearch() {
     axios.get(`http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${this.state.search}&api_key=910ead441a576fa0b1083e89589a6679&format=json`).then(res => {
@@ -92,7 +94,8 @@ export default class ArtistProfile extends Component {
         <p>{similar.map((artist) => artist.name).join(', ')}</p>
         <h3>Biography</h3>
         <p>{bio}</p>
-        <h3>iTunes</h3>
+        <h3>iTunes Store</h3>
+        <Itunes />
       </div>
     );
   }

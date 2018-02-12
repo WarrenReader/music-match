@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Header from './header.js';
 import './styles/user-profile.css';
 import axios from 'axios';
 
@@ -81,7 +80,7 @@ export default class UserProfile extends Component {
 
   render() {
 
-    let {name, lastName, email, favoriteArtists, favoriteGenres} = this.state.user;
+    let {name, email, favoriteArtists, favoriteGenres} = this.state.user;
     favoriteArtists = favoriteArtists.join(', ');
 
     return (
